@@ -114,4 +114,4 @@ Inspired by existing animal pose estimation research and adapted to cattle anato
 
 
 
-![classification_model](https://github.com/shivanshu099/law_chatbot_version2/blob/main/screenshot3.png)
+![classification_model](https://github.com/shivanshu099/Cow_Pose_Detection_with_Keypoints_-/blob/main/Screenshot%202025-09-28%20000325.png)
