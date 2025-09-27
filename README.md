@@ -10,39 +10,20 @@ This repository contains a pipeline for **cow pose/keypoint detection**: dataset
 
 ---
 
-## ✨ Keypoints (14–16 landmarks)
+## ✨ keypoints in my model
 
-**Head**
-- Nose (snout tip)  
-- Left ear base  
-- Right ear base
-
-**Neck & Shoulder**
-- Withers (highest spine point / shoulder top)
-
-**Torso**
-- Chest point (base of neck, between front legs)  
-- Mid-back / spine midpoint  
-- Hip point (center of hip bone)
-
-**Forelimbs**
-- Left front knee  
-- Right front knee  
-- Left front hoof  
-- Right front hoof
-
-**Hindlimbs**
-- Left hind knee (stifle)  
-- Right hind knee  
-- Left hind hoof  
-- Right hind hoof
-
-**Back End**
-- Tail base  
-- Rump pin bone (rear hip pin)
-
----
-
+```
+KEYPOINTS = {
+    0: "head",
+    1: "withers",
+    2: "hip_point",
+    3: "tail_base",
+    4: "rump_pin",
+    5: "chest",
+    6: "neck",
+    7: "middle_hip"
+}
+```
 ## 📌 Annotation Guidelines
 
 - Use a **consistent keypoint index/order** across all images.  
