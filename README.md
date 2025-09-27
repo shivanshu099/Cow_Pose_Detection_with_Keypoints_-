@@ -84,19 +84,6 @@ Example (YOLOv8 Pose):
 
 yolo pose train data=cow_keypoints.yaml model=yolov8n-pose.pt epochs=100 imgsz=640
 
-📂 Dataset Structure
-cow-pose-detection/
-│── images/
-│   ├── train/
-│   ├── val/
-│── labels/
-│   ├── train/
-│   ├── val/
-│── cow_keypoints.yaml
-│── README.md
-
-🎯 Applications
-
 Automated lameness detection
 
 Body condition scoring
@@ -110,7 +97,7 @@ Livestock monitoring systems
 Inspired by existing animal pose estimation research and adapted to cattle anatomy.
 
 
-##screenshots
+#screenshots
 
 
 
