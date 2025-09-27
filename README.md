@@ -1,100 +1,68 @@
-🐄 Cow Pose Detection with Keypoints
+# 🐄 Cow Pose Detection with Keypoints
 
-This project focuses on pose estimation for cows by labeling anatomical keypoints. The labeled dataset can be used to train keypoint detection models (e.g., YOLOv8 Pose, HRNet, or DeepLabCut) for applications like posture analysis, lameness detection, weight estimation, and behavior monitoring.
+This repository contains a pipeline for **cow pose/keypoint detection**: dataset labeling, model training, and a simple app (FastAPI backend + frontend) to run and visualize predictions.
 
-✨ Keypoints Definition
+**Highlights**
+- Dataset labeled with **Roboflow Annotate**.  
+- Model trained with **YOLOv8 Pose (Ultralytics)**.  
+- Backend: **FastAPI** (serves model inference API).  
+- Frontend: simple web UI (run with `npm run dev`).
 
-We define 14–16 anatomical landmarks that represent the cow’s body structure:
+---
 
-Head Region
+## ✨ Keypoints (14–16 landmarks)
 
-Nose (snout tip)
+**Head**
+- Nose (snout tip)  
+- Left ear base  
+- Right ear base
 
-Left ear base
+**Neck & Shoulder**
+- Withers (highest spine point / shoulder top)
 
-Right ear base
+**Torso**
+- Chest point (base of neck, between front legs)  
+- Mid-back / spine midpoint  
+- Hip point (center of hip bone)
 
-Neck & Shoulder
+**Forelimbs**
+- Left front knee  
+- Right front knee  
+- Left front hoof  
+- Right front hoof
 
-Withers (shoulder top / highest spine point)
+**Hindlimbs**
+- Left hind knee (stifle)  
+- Right hind knee  
+- Left hind hoof  
+- Right hind hoof
 
-Torso
+**Back End**
+- Tail base  
+- Rump pin bone (rear hip pin)
 
-Chest point (base of neck, between front legs)
+---
 
-Mid-back / spine midpoint
+## 📌 Annotation Guidelines
 
-Hip point (center of hip bone)
+- Use a **consistent keypoint index/order** across all images.  
+- Place keypoints on **visible joints/landmarks**.  
+- If occluded, **approximate** the location as best as possible and mark visibility appropriately.  
+- Export labels in **COCO** or **YOLO Pose** format for training.
 
-Forelimbs
+---
 
-Left front knee
+## 🛠️ Tools
 
-Right front knee
+- **Roboflow Annotate** — labeling (used for this project)  
+- **Ultralytics / YOLOv8** — training and inference  
+- **Label Studio**, **CVAT** — alternatives
 
-Left front hoof
+---
 
-Right front hoof
+## 🚀 Training (example)
 
-Hindlimbs
-
-Left hind knee (stifle)
-
-Right hind knee
-
-Left hind hoof
-
-Right hind hoof
-
-Back End
-
-Tail base
-
-Rump pin bone (rear hip pin)
-
-📌 Annotation Guidelines
-
-Use a consistent order of labeling (same index for same keypoint across all images).
-
-Place keypoints on visible joints/landmarks.
-
-If a keypoint is occluded, still annotate it approximately (if possible).
-
-Save labels in COCO format or YOLO Pose format for training.
-
-🛠️ Tools for Labeling
-
-Label Studio
-
-CVAT
-
-Roboflow Annotate
-
-🚀 Training Models
-
-You can train models like:
-
-YOLOv8 Pose (Ultralytics)
-
-HRNet
-
-DeepLabCut (commonly used for animal pose estimation)
-
-Example (YOLOv8 Pose):
-
-yolo pose train data=cow_keypoints.yaml model=yolov8n-pose.pt epochs=100 imgsz=640
-
-Automated lameness detection
-
-Body condition scoring
-
-Gait & movement analysis
-
-Livestock monitoring systems
-
-🙌 Acknowledgments
-
-Inspired by existing animal pose estimation research and adapted to cattle anatomy.
+Train using Ultralytics YOLOv8 Pose after preparing `cow_keypoints.yaml` (dataset config):
 
 
 #screenshots
